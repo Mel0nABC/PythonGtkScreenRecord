@@ -21,6 +21,11 @@ class DemoApplication(Gtk.Application):
         self.info_monitores()
         # para hacer pruebas sin abrir gráficos.
         # win.close()
+        # print("RUN")
+        # builder = Gtk.Builder()
+        # builder.add_from_file("main.xml")
+        # window: Gtk.ApplicationWindow = builder.get_object("window1")
+        # window.present()
 
     def info_monitores(self):
         display = Gdk.Display.get_default()

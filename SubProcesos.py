@@ -1,5 +1,4 @@
 import subprocess
-import GestorFicheros
 
 
 def record_on_run(newFileName):
