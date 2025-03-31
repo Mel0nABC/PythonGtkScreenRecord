@@ -1,0 +1,73 @@
+using Gtk 4.0;
+
+ApplicationWindow win {
+  title: _("Screen Recorder");
+
+  Box {
+    orientation: vertical;
+
+    Box {
+      orientation: vertical;
+      halign: center;
+
+      DropDown dropScreen {
+        halign: center;
+      }
+
+      DropDown dropResolution {
+        halign: center;
+
+        model: StringList {
+          strings [
+            _("SELECCIONA RESOLUCIÓN DE CAPTURA"),
+            _("3440X1440"),
+            _("1920X1"),
+          ]
+        };
+      }
+
+      SpinButton ftsData {
+        orientation: vertical;
+        climb-rate: 5;
+
+        Adjustment {
+          lower: 0;
+          upper: 400;
+          page-size: 10;
+          step-increment: 1;
+        }
+      }
+
+      DropDown dropCodec {
+        halign: center;
+
+        model: StringList {
+          strings [
+            _("SELECCIONA CODEC DE VIDEO"),
+            _("h264"),
+            _("h265"),
+          ]
+        };
+      }
+    }
+
+    Box {
+      orientation: vertical;
+
+      Box {
+        orientation: horizontal;
+        halign: center;
+
+        Label {
+          label: _("Capturar audio");
+        }
+
+        CheckButton audioCheck {}
+      }
+    }
+
+    Button btnAction {
+      label: _("START");
+    }
+  }
+}

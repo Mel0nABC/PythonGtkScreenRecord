@@ -1,0 +1,87 @@
+using Gtk 4.0;
+
+ApplicationWindow win {
+  title: _("Screen Recorder");
+
+  Box {
+    orientation: vertical;
+
+    Box {
+      orientation: horizontal;
+      halign: center;
+    }
+
+    Box {
+      orientation: vertical;
+      halign: center;
+
+      DropDown dropScreen {
+        halign: center;
+
+        model: StringList {
+          strings [
+            _("SELECCIONA LA PANTALLA"),
+            _("PANTALLA 1"),
+            _("PANTALLA 2"),
+          ]
+        };
+      }
+
+      DropDown dropResolution {
+        model: StringList {
+          strings [
+            _("SELECCIONA RESOLUCIÓN DE CAPTURA"),
+            _("3440X1440"),
+            _("1920X1080"),
+          ]
+        };
+      }
+
+      SpinButton {
+        orientation: vertical;
+
+        Adjustment {
+          lower: 0;
+          upper: 500;
+          step-increment: 1;
+          page-increment: 10;
+          value: 10;
+        }
+      }
+    }
+
+    Box {
+      orientation: vertical;
+
+      Box {
+        orientation: horizontal;
+        halign: center;
+
+        CheckButton {
+          label: _("opcion1");
+        }
+
+        CheckButton {
+          label: _("opcion1");
+        }
+      }
+
+      Box {
+        orientation: horizontal;
+        halign: center;
+
+        CheckButton {
+          label: _("opcion1");
+        }
+
+        CheckButton {
+          label: _("opcion1");
+        }
+      }
+    }
+
+    Button btnAction {
+      label: _("START");
+    }
+  }
+}

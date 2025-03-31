@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkApplicationWindow" id="win">
+    <property name="title" translatable="yes">Screen Recorder</property>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">1</property>
+        <child>
+          <object class="GtkBox">
+            <property name="orientation">1</property>
+            <property name="halign">3</property>
+            <child>
+              <object class="GtkDropDown" id="dropScreen">
+                <property name="halign">3</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkDropDown" id="dropResolution">
+                <property name="halign">3</property>
+                <property name="model">
+                  <object class="GtkStringList">
+                    <items>
+                      <item translatable="yes">SELECCIONA RESOLUCIÓN DE CAPTURA</item>
+                      <item translatable="yes">3440X1440</item>
+                      <item translatable="yes">1920X1</item>
+                    </items>
+                  </object>
+                </property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkSpinButton" id="ftsData">
+                <property name="orientation">1</property>
+                <property name="climb-rate">5</property>
+                <child>
+                  <object class="GtkAdjustment">
+                    <property name="lower">0</property>
+                    <property name="upper">400</property>
+                    <property name="page-size">10</property>
+                    <property name="step-increment">1</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkDropDown" id="dropCodec">
+                <property name="halign">3</property>
+                <property name="model">
+                  <object class="GtkStringList">
+                    <items>
+                      <item translatable="yes">SELECCIONA CODEC DE VIDEO</item>
+                      <item translatable="yes">h264</item>
+                      <item translatable="yes">h265</item>
+                    </items>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="orientation">1</property>
+            <child>
+              <object class="GtkBox">
+                <property name="orientation">0</property>
+                <property name="halign">3</property>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes">Capturar audio</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="audioCheck"></object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="btnAction">
+            <property name="label" translatable="yes">START</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
